@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Latest Tracks</h2>
+
+<div class="track-container">
+    {% for track in tracks %}
+    <div class="track-card">
+        <h3>{{ track.title }}</h3>
+
+        <audio controls>
+            <source src="{{ url_for('static', filename='uploads/' + track.filename) }}" type="audio/mpeg">
+        </audio>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
