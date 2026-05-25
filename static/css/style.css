@@ -1,103 +1,173 @@
-body {
+/* RESET */
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
     font-family: Arial, sans-serif;
     background: #0d0d0d;
     color: white;
+    overflow-x: hidden;
 }
 
 /* HERO SECTION */
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+
     background:
-        linear-gradient(rgba(0,0,0,0.7),
-        rgba(0,0,0,0.8)),
+        linear-gradient(
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.8)
+        ),
         url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop');
+
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+    padding: 20px;
 }
 
+/* OVERLAY */
+
 .overlay {
-    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
 }
+
+/* LOGO */
 
 .hero h1 {
     font-size: 4rem;
-    margin-bottom: 20px;
     color: #ff4b2b;
+    margin-bottom: 20px;
     letter-spacing: 2px;
+    word-wrap: break-word;
 }
 
+/* NAVIGATION */
+
 nav {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-bottom: 25px;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: 0.3s;
+
+    padding: 10px 15px;
+    border-radius: 6px;
+
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    color: #ff4b2b;
+    background: #ff4b2b;
 }
+
+/* TAGLINE */
 
 .tagline {
     font-size: 1.3rem;
     color: #ddd;
+    line-height: 1.6;
 }
 
 /* MAIN CONTENT */
 
 main {
-    padding: 40px;
+    padding: 40px 20px;
 }
+
+/* TRACK GRID */
 
 .track-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 20px;
 }
+
+/* TRACK CARDS */
 
 .track-card {
     background: #1a1a1a;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255,75,43,0.2);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 15px rgba(255,75,43,0.15);
+
+    transition: 0.3s ease;
 }
+
+.track-card:hover {
+    transform: translateY(-5px);
+}
+
+/* AUDIO PLAYER */
 
 audio {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-/* FORM */
+/* FORMS */
 
 form {
     display: flex;
     flex-direction: column;
+
     gap: 15px;
+
+    width: 100%;
     max-width: 500px;
+
+    margin: auto;
 }
 
 input,
 button {
-    padding: 12px;
+    width: 100%;
+
+    padding: 14px;
+
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+
+    font-size: 1rem;
 }
+
+/* BUTTONS */
 
 button {
     background: #ff4b2b;
     color: white;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
 }
 
 button:hover {
@@ -108,14 +178,81 @@ button:hover {
 
 footer {
     text-align: center;
+
     padding: 20px;
+
     background: #111;
+
     margin-top: 40px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #1e1e1e;
-    margin-top: 40px;
+/* TABLET RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 80vh;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+        line-height: 1.2;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    .track-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* SMALL PHONE DEVICES */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    input,
+    button {
+        padding: 12px;
+    }
+
 }
