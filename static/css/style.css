@@ -256,3 +256,118 @@ footer {
     }
 
 }
+
+/* INSTRUMENT SLIDER */
+
+.instrument-slider {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    height: 420px;
+
+    margin: 40px auto 0;
+
+    overflow: hidden;
+}
+
+/* CARD */
+
+.instrument-card {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(20,20,20,0.95);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: scale(0.95);
+
+    transition: all 1s ease;
+
+    box-shadow:
+        0 0 25px rgba(255,75,43,0.25);
+}
+
+/* ACTIVE CARD */
+
+.instrument-card.active {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    z-index: 1;
+}
+
+/* IMAGE */
+
+.instrument-card img {
+
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+}
+
+/* TEXT */
+
+.instrument-card h3 {
+
+    padding: 20px;
+
+    font-size: 1.5rem;
+
+    color: #ff4b2b;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+
+    .instrument-slider {
+
+        height: 340px;
+    }
+
+    .instrument-card img {
+
+        height: 250px;
+    }
+
+    .instrument-card h3 {
+
+        font-size: 1.2rem;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .instrument-slider {
+
+        height: 300px;
+    }
+
+    .instrument-card img {
+
+        height: 210px;
+    }
+
+    .instrument-card h3 {
+
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
