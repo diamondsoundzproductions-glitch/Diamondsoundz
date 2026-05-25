@@ -11,6 +11,69 @@
 <header class="hero">
 
     <div class="overlay">
+
+        <h1>DiamondSoundz Productions</h1>
+
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+
+        <p class="tagline">
+            Professional Music Production • Recording • Mixing • Mastering
+        </p>
+
+        <!-- INSTRUMENT SLIDER -->
+
+        <div class="instrument-slider">
+
+            <div class="instrument-card active">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop">
+                <h3>Studio Keyboard</h3>
+            </div>
+
+            <div class="instrument-card">
+                <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop">
+                <h3>Professional Drum Set</h3>
+            </div>
+
+            <div class="instrument-card">
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop">
+                <h3>Electric Guitar</h3>
+            </div>
+
+            <div class="instrument-card">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop">
+                <h3>Studio Mixing Console</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<script>
+
+const cards = document.querySelectorAll('.instrument-card');
+
+let current = 0;
+
+function showNextCard() {
+
+    cards[current].classList.remove('active');
+
+    current = (current + 1) % cards.length;
+
+    cards[current].classList.add('active');
+}
+
+setInterval(showNextCard, 4000);
+
+</script>
+
+    <div class="overlay">
         <h1>DiamondSoundz Productions</h1>
 
         <nav>
